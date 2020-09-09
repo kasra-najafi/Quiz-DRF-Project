@@ -6,19 +6,27 @@ from rest_framework.views import APIView
 from rest_framework import viewsets
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
+
+import datetime
+
 # from .permissions import 
 
-from .models import Question, Cat
-from .serializers import QuestionSerializer, CatSerializer, AnsSerializer
+from .models import Question, Cat, Log
+from .serializers import QuestionSerializer, CatSerializer, AnsSerializer, LogSerializer
 
 class QuestionView(viewsets.ModelViewSet):
     queryset = Question.objects.all().order_by('cat', 'id')
     serializer_class = QuestionSerializer
+    
 
 
 class CatView(viewsets.ModelViewSet):
     queryset = Cat.objects.all()
     serializer_class = CatSerializer
+
+class LogView(viewsets.ReadOnlyModelViewSet):
+    queryset = Log.objects.all()
+    serializer_class = LogSerializer
 
 class AnsView(APIView):
     serializer_class = AnsSerializer
@@ -33,16 +41,20 @@ class AnsView(APIView):
                     question.nothing = F('nothing') + 1
                     question.save()
                     question.refresh_from_db()
+                    Log.objects.create(datetime=datetime.datetime.now(), qid=qid, ans=ans, status='nothing')
                     return Response("شما جوابی به این سوال ندادید")
-                elif question.trueans == ans:
+                elif question.trueans == str(ans):
                     question.correct = F('correct') + 1
                     question.save()
                     question.refresh_from_db()
+                    Log.objects.create(datetime=datetime.datetime.now(), qid=qid, ans=ans, status='correct')
                     return Response("شما جواب درست به این سوال دادید")
                 else:
                     question.wrong = F('wrong') + 1
                     question.save()
                     question.refresh_from_db()
+                    Log.objects.create(datetime=datetime.datetime.now(), qid=qid, ans=ans, status='wrong')
                     return Response("شما جواب اشتباه به این سوال دادید")
             except:
                 return Response("چنین سوالی وجود ندارد")
+            

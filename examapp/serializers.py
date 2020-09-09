@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Question, Cat
+from .models import Question, Cat, Log
 
 class QuestionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -21,3 +21,8 @@ class AnsSerializer(serializers.Serializer):
         if value not in [0,1,2,3,4]:
             raise serializers.ValidationError("عددی بین 0 تا 4 وارد کنید")
         return value
+
+class LogSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Log
+        fields = '__all__'

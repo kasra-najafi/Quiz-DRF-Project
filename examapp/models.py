@@ -31,3 +31,17 @@ class Question(models.Model):
 
     def __str__(self):
         return self.content
+
+class Log(models.Model):
+    """
+    logs
+    """    
+    Answer_Status = [
+        ('correct', 'correct'),
+        ('wrong', 'wrong'),
+        ('nothing', 'nothing'),
+    ]
+    datetime = models.DateTimeField()
+    qid = models.IntegerField()
+    ans = models.IntegerField()
+    status = models.CharField(max_length=10, choices=Answer_Status)
