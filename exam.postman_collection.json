@@ -1,0 +1,624 @@
+{
+	"info": {
+		"_postman_id": "352b0f4a-d25f-426a-9282-d8a58fefc6bc",
+		"name": "exam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get question by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": [
+				{
+					"name": "get question by query params",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/question/?cat=1&difficulty=mid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"question",
+								""
+							],
+							"query": [
+								{
+									"key": "cat",
+									"value": "1"
+								},
+								{
+									"key": "difficulty",
+									"value": "mid"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 09 Sep 2020 13:40:06 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "329"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"url\": \"http://127.0.0.1:8000/api/question/1/\",\n        \"content\": \"کدام یک از موارد زیر جزو بازیگران نمی باشد؟\",\n        \"answers\": \"1-ali daii  2- shahb hosseini  3- foroutan  4- negar javaherian\",\n        \"trueans\": \"1\",\n        \"difficulty\": \"mid\",\n        \"correct\": 0,\n        \"wrong\": 0,\n        \"nothing\": 0,\n        \"cat\": \"http://127.0.0.1:8000/api/category/1/\"\n    }\n]"
+				},
+				{
+					"name": "get question by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/question/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"question",
+								"1",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 09 Sep 2020 13:33:02 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "327"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"url\": \"http://127.0.0.1:8000/api/question/1/\",\n    \"content\": \"کدام یک از موارد زیر جزو بازیگران نمی باشد؟\",\n    \"answers\": \"1-ali daii  2- shahb hosseini  3- foroutan  4- negar javaherian\",\n    \"trueans\": \"1\",\n    \"difficulty\": \"mid\",\n    \"correct\": 0,\n    \"wrong\": 0,\n    \"nothing\": 0,\n    \"cat\": \"http://127.0.0.1:8000/api/category/1/\"\n}"
+				},
+				{
+					"name": "get question list ordered by cat and id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/question/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"question",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 09 Sep 2020 13:40:06 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "329"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"url\": \"http://127.0.0.1:8000/api/question/1/\",\n        \"content\": \"کدام یک از موارد زیر جزو بازیگران نمی باشد؟\",\n        \"answers\": \"1-ali daii  2- shahb hosseini  3- foroutan  4- negar javaherian\",\n        \"trueans\": \"1\",\n        \"difficulty\": \"mid\",\n        \"correct\": 0,\n        \"wrong\": 0,\n        \"nothing\": 0,\n        \"cat\": \"http://127.0.0.1:8000/api/category/1/\"\n    }\n]"
+				},
+				{
+					"name": "put (change) question ",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"content\": \"آخر سریال بیست و چهار چگونه پایان یافت؟\",\r\n    \"answers\": \"1- shad  2- be khoobi  3- ezdevaj kardan   4- teragedy\",\r\n    \"trueans\": \"4\",\r\n    \"difficulty\": \"hard\",\r\n    \"correct\": 1,\r\n    \"wrong\": 7,\r\n    \"nothing\": 0,\r\n    \"cat\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/question/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"question",
+								"2",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 09 Sep 2020 13:54:40 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "235"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"content\": \"آخر سریال بیست و چهار چگونه پایان یافت؟\",\n    \"answers\": \"1- shad  2- be khoobi  3- ezdevaj kardan   4- teragedy\",\n    \"trueans\": \"4\",\n    \"difficulty\": \"hard\",\n    \"correct\": 1,\n    \"wrong\": 7,\n    \"nothing\": 0,\n    \"cat\": 1\n}"
+				},
+				{
+					"name": "post (create) question ",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"کدام یک از موارد زیر باعث بی تفاوتی کارمندان می گردد؟\",\r\n    \"answers\": \"1- hoghooghe ziad   2- raftare khoob  3- tahghir  4- tashilate monaseb\",\r\n    \"trueans\": \"3\",\r\n    \"difficulty\": \"easy\",\r\n    \"cat\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/question/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"question",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 09 Sep 2020 13:52:31 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "276"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 6,\n    \"content\": \"کدام یک از موارد زیر باعث بی تفاوتی کارمندان می گردد؟\",\n    \"answers\": \"1- hoghooghe ziad   2- raftare khoob  3- tahghir  4- tashilate monaseb\",\n    \"trueans\": \"3\",\n    \"difficulty\": \"easy\",\n    \"correct\": 0,\n    \"wrong\": 0,\n    \"nothing\": 0,\n    \"cat\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "show question by category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": [
+				{
+					"name": "show question by category",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/category/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"category",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 09 Sep 2020 13:39:10 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1517"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"فیلم و سریال\",\n        \"url\": \"http://127.0.0.1:8000/api/category/1/\",\n        \"question\": [\n            {\n                \"url\": \"http://127.0.0.1:8000/api/question/1/\",\n                \"content\": \"کدام یک از موارد زیر جزو بازیگران نمی باشد؟\",\n                \"answers\": \"1-ali daii  2- shahb hosseini  3- foroutan  4- negar javaherian\",\n                \"trueans\": \"1\",\n                \"difficulty\": \"mid\",\n                \"correct\": 0,\n                \"wrong\": 0,\n                \"nothing\": 0,\n                \"cat\": \"http://127.0.0.1:8000/api/category/1/\"\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/question/2/\",\n                \"content\": \"آخر سریال بیست و چهار چگونه پایان یافت؟\",\n                \"answers\": \"1- shad  2- be khoobi  3- ezdevaj kardan   4- gham angiz\",\n                \"trueans\": \"4\",\n                \"difficulty\": \"hard\",\n                \"correct\": 1,\n                \"wrong\": 7,\n                \"nothing\": 0,\n                \"cat\": \"http://127.0.0.1:8000/api/category/1/\"\n            }\n        ]\n    },\n    {\n        \"name\": \"ورزشی\",\n        \"url\": \"http://127.0.0.1:8000/api/category/2/\",\n        \"question\": [\n            {\n                \"url\": \"http://127.0.0.1:8000/api/question/3/\",\n                \"content\": \"کدام یک فوتبالیست نیستند؟\",\n                \"answers\": \"1- ali daii  2- khodadad azizi  3- shahab hosseini  4- beyranvand\",\n                \"trueans\": \"3\",\n                \"difficulty\": \"easy\",\n                \"correct\": 0,\n                \"wrong\": 0,\n                \"nothing\": 0,\n                \"cat\": \"http://127.0.0.1:8000/api/category/2/\"\n            }\n        ]\n    },\n    {\n        \"name\": \"علمی\",\n        \"url\": \"http://127.0.0.1:8000/api/category/3/\",\n        \"question\": [\n            {\n                \"url\": \"http://127.0.0.1:8000/api/question/4/\",\n                \"content\": \"کدام یک از موارد زیر ذرات تشکیل دهنده ماده نیستند؟\",\n                \"answers\": \"1- atom  2- avand  3- onsor   4- moolkool\",\n                \"trueans\": \"2\",\n                \"difficulty\": \"hard\",\n                \"correct\": 0,\n                \"wrong\": 1,\n                \"nothing\": 0,\n                \"cat\": \"http://127.0.0.1:8000/api/category/3/\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "answering",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": [
+				{
+					"name": "answering",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"qid\": 2,\r\n    \"ans\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/answer",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"answer"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 09 Sep 2020 13:57:25 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "\"شما جواب درست به این سوال دادید\""
+				}
+			]
+		},
+		{
+			"name": "Log",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": [
+				{
+					"name": "Log",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/log/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"log",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 09 Sep 2020 13:58:44 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "356"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"url\": \"http://127.0.0.1:8000/api/log/1/\",\n        \"datetime\": \"2020-09-09T17:48:13.377047Z\",\n        \"qid\": 2,\n        \"ans\": 4,\n        \"status\": \"wrong\"\n    },\n    {\n        \"url\": \"http://127.0.0.1:8000/api/log/2/\",\n        \"datetime\": \"2020-09-09T17:49:47.320367Z\",\n        \"qid\": 2,\n        \"ans\": 4,\n        \"status\": \"correct\"\n    },\n    {\n        \"url\": \"http://127.0.0.1:8000/api/log/3/\",\n        \"datetime\": \"2020-09-09T18:27:25.470642Z\",\n        \"qid\": 2,\n        \"ans\": 4,\n        \"status\": \"correct\"\n    }\n]"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 from .models import Question, Cat, Log
 
-class QuestionSerializer(serializers.HyperlinkedModelSerializer):
+class QuestionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Question
         fields = '__all__'

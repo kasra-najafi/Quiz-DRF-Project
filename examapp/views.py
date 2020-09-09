@@ -17,7 +17,20 @@ from .serializers import QuestionSerializer, CatSerializer, AnsSerializer, LogSe
 class QuestionView(viewsets.ModelViewSet):
     queryset = Question.objects.all().order_by('cat', 'id')
     serializer_class = QuestionSerializer
-    
+
+    def get_queryset(self):
+        """
+        Optionally restricts the returned purchases to a given user,
+        by filtering against a `username` query parameter in the URL.
+        """
+        queryset = Question.objects.all()
+        cat = self.request.query_params.get('cat', None)
+        dif = self.request.query_params.get('difficulty', None)
+        if cat is not None:
+            queryset = queryset.filter(cat=cat)
+        if dif is not None:
+            queryset = queryset.filter(difficulty=dif)
+        return queryset
 
 
 class CatView(viewsets.ModelViewSet):
