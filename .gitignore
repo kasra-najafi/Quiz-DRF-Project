@@ -1,0 +1,30 @@
+env/
+BDENV/
+BDSHOP/
+.idea
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+# /static/
+
+# Created by https://www.gitignore.io/api/visualstudiocode
+# Edit at https://www.gitignore.io/?templates=visualstudiocode
+
+### VisualStudioCode ###
+.vscode/*
+"**/migrations/*"
+migrations
+migrations/__init__.py
+**/migrations/
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
+# End of https://www.gitignore.io/api/visualstudiocode
+.vscode/settings.json
