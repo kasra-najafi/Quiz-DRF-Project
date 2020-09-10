@@ -3,7 +3,7 @@ from django.db.models import F
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
-from rest_framework import viewsets
+from rest_framework import status, viewsets
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated, IsAdminUser
 
@@ -26,7 +26,17 @@ class QuestionView(viewsets.ModelViewSet):
     #     if self.action == 'create':
     #         permission_classes = [IsSuperOrReadOnly]
     #     return [permission() for permission in permission_classes]
-        
+
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        if request.user.is_superuser:
+            self.perform_create(serializer)
+            headers = self.get_success_headers(serializer.data)
+            return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)   
+        else:
+            return Response("با کاربر ادمین وارد شوید")
 
     def get_object(self):
         obj = get_object_or_404(self.get_queryset(), pk=self.kwargs["pk"])
