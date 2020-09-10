@@ -8,6 +8,7 @@ router = routers.DefaultRouter()
 router.register('question', views.QuestionView)
 router.register('category', views.CatView)
 router.register('log', views.LogView)
+router.register('profile', views.ProfileView)
 
 
 urlpatterns = [
